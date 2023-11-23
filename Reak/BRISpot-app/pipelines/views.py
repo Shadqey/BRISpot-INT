@@ -52,6 +52,13 @@ class UpdatePipelineDocuments(APIView):
         pipeline.save()
         
         serializer = PipelineSerializer(pipeline)
+        
+        # response = Response()
+        # response.data = {
+        #     'message' : 'A New Pipeline is Created',
+        #     'data' : serializer.data
+        # }
+        
         return Response(serializer.data)
     
 class UpdatePipeline(APIView):
