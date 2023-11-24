@@ -36,12 +36,12 @@ const TestSidebar = ( {children} ) => {
         },
         {
             path:"/kunjungannasabah",
-            name:"KunjungaNasabah",
+            name:"Kunjungan Nasabah",
             iconL:<PowerIcon/>
         },
         {
             path:"/pipeline",
-            name:"PiplinePage",
+            name:"Pipeline Page",
             iconL:<Cog6ToothIcon/>
         },
     ]
