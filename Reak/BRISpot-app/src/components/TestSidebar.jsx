@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {
     Card,
     Typography,
@@ -12,7 +13,7 @@ import {
     AccordionBody,
     Alert,
     Input,
-  } from "@material-tailwind/react";
+} from "@material-tailwind/react";
 
 import {
     PresentationChartBarIcon,
@@ -21,11 +22,12 @@ import {
     Cog6ToothIcon,
     InboxIcon,
     PowerIcon,
-  } from "@heroicons/react/24/solid";
+} from "@heroicons/react/24/solid";
+
 import { NavLink } from 'react-router-dom';
 import NavigationComponents from './NavigationComponents';
 
-const TestSidebar = ({children}) => {
+const TestSidebar = ( {children} ) => {
     const menuItem =[
         {
             path:"/",
@@ -70,7 +72,7 @@ const TestSidebar = ({children}) => {
                 
                 {/* Content */}
                 <div className='w-full h-screen'>
-                    <NavigationComponents/>
+                    <NavigationComponents currentPage={menuItem.name}/>
                     <div className='m-4'>
                         <main>{children}</main>
                     </div>

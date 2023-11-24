@@ -1,7 +1,10 @@
 import React from 'react'
+import NavigationComponents from '../components/NavigationComponents'
 
-const BerandaPage = () => {
+const BerandaPage = ( {currentPage }) => {
+
   return (
+    
     <h1 className="text-3xl font-bold underline">
         Ini Beranda
     </h1>
