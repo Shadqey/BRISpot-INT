@@ -2,6 +2,6 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', PipelineView.as_view(), name = 'Pipeline'),
-    
+    path('list/', PipelineView.as_view(), name = 'pipeline'),
+    path('detail/<int:id>/', DetailPipelineView.as_view(), name = 'detail-pipeline')
 ]
