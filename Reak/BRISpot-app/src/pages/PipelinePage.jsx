@@ -4,7 +4,7 @@ import React from 'react'
 
 const PipelinePage = () => {
   return (
-    <div>PipelinePage</div>
+    <div>Pipeline Page</div>
   )
 }
 
