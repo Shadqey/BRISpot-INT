@@ -1,5 +1,4 @@
 import React from 'react'
-import NavigationComponents from '../components/NavigationComponents'
 
 const BerandaPage = ({ currentPage }) => {
   return (
