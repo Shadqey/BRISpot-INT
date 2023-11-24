@@ -24,7 +24,7 @@ import {
     PowerIcon,
 } from "@heroicons/react/24/solid";
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import NavigationComponents from './NavigationComponents';
 
 const TestSidebar = ( {children} ) => {
@@ -45,6 +45,11 @@ const TestSidebar = ( {children} ) => {
             iconL:<Cog6ToothIcon/>
         },
     ]
+
+    const currentPath = useLocation().pathname;
+    const currentMenuItem = menuItem.find(item => item.path === currentPath)
+    const currentPageName = currentMenuItem ? currentMenuItem.name : '';
+
     return (
         <div className="flex flex-col">
             <div className="flex flex-1">
@@ -72,7 +77,7 @@ const TestSidebar = ( {children} ) => {
                 
                 {/* Content */}
                 <div className='w-full h-screen'>
-                    <NavigationComponents currentPage={menuItem.name}/>
+                    <NavigationComponents currentPage={currentPageName}/>
                     <div className='m-4'>
                         <main>{children}</main>
                     </div>
