@@ -23,6 +23,8 @@ import {
     PowerIcon,
   } from "@heroicons/react/24/solid";
 import { NavLink } from 'react-router-dom';
+import NavigationComponents from './NavigationComponents';
+
 const TestSidebar = ({children}) => {
     const menuItem =[
         {
@@ -42,28 +44,38 @@ const TestSidebar = ({children}) => {
         },
     ]
     return (
-        <div className="container flex">
-            <div className="sidebar h-[calc(100vh)] max-w-[20rem] p-4 shadow-xl">
-                <div className="top-section mb-2 flex items-center gap-4 p-4">
-                    <img src="https://docs.material-tailwind.com/img/logo-ct-dark.png" alt="brand" className="h-8 w-8" />
-                    <Typography variant="h5" color="blue-gray">
-                        Sidebar
-                    </Typography>
+        <div className="flex flex-col">
+            <div className="flex flex-1">
+                {/* Sidebar */}
+                <div className="h-[calc(100vh)] max-w-[20rem] p-4 shadow-xl sticky top-0">
+                    <div className="top-section mb-2 flex items-center gap-4 p-4">
+                        <img src="https://docs.material-tailwind.com/img/logo-ct-dark.png" alt="brand" className="h-8 w-8" />
+                        <Typography variant="h5" color="blue-gray">
+                            Sidebar
+                        </Typography>
+                    </div>
+                    {
+                        menuItem.map((item, index) =>(
+                            <NavLink to={item.path} key={index} className="link" activeclassName="active">
+                                <ListItem>
+                                    <ListItemPrefix>
+                                        <div className="icon h-5 w-5">{item.iconL}</div>
+                                    </ListItemPrefix>
+                                    <div className="link_text">{item.name}</div>
+                                </ListItem> 
+                            </NavLink>
+                        ))
+                    }
                 </div>
-                {
-                    menuItem.map((item, index) =>(
-                        <NavLink to={item.path} key={index} className="link" activeclassName="active">
-                            <ListItem>
-                                <ListItemPrefix>
-                                    <div className="icon h-5 w-5">{item.iconL}</div>
-                                </ListItemPrefix>
-                                <div className="link_text">{item.name}</div>
-                            </ListItem> 
-                        </NavLink>
-                    ))
-                }
+                
+                {/* Content */}
+                <div className='w-full h-screen'>
+                    <NavigationComponents/>
+                    <div className='m-4'>
+                        <main>{children}</main>
+                    </div>
+                </div>
             </div>
-            <main>{children}</main>
         </div>
   )
 }

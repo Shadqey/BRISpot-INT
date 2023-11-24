@@ -2,8 +2,6 @@ import './dist/css/index.css'
 import {Routes, Route} from 'react-router-dom'
 
 import BerandaPage from './pages/BerandaPage'
-import SidebarComponents from './components/SidebarComponents'
-import FooterComponents from './components/FooterComponents'
 import TestSidebar from './components/TestSidebar'  
 import KunjunganNasabah from './pages/KunjunganNasabah'
 import PipelinePage from './pages/PipelinePage'
