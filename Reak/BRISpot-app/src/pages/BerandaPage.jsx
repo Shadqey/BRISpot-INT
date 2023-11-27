@@ -5,26 +5,31 @@ import {
   CardBody,
   Typography,
 } from "@material-tailwind/react";
+import { dataProfile } from "../data/index.js";
 
 const BerandaPage = ( {currentPage }) => {
 
   return (
-    <div className='bg-sla'>
-      <Typography variant='h4' className='text-center mt-10'>Selamat Datang di Aplikasi BRISPOT WEB</Typography>
-      <div>
-        <Card className="mt-6 w-full">
-          <CardBody>
-            <div className="flex">
-              <Typography variant="h6" color="blue-gray" className="mb-2">
-                UI/UX Review Check
-              </Typography>
+    <div>
+      <Typography variant='h4' className='text-center mt-10 mb-4 font-nunito font-extrabold text-BgPrimary'>Selamat Datang di Aplikasi BRISPOT WEB</Typography>
+      <div className='bg-white rounded-lg py-[25px]'>
+        {dataProfile.map((beranda) => {
+                return(
+                  <div className='flex ml-[30px]'>
+                    <Typography color="blue-gray" className="mb-2 font-nunito font-bold text-Gray1 text-[16px] w-[193px]">
+                      {beranda.nama}
+                    </Typography>
+                  
+                    <Typography color="blue-gray" className="mb-2 font-nunito font-bold text-Gray1 text-[16px] pr-[24px]">
+                      :
+                    </Typography>
 
-              <Typography variant="h6" color="blue-gray" className="mb-2">
-                UI/UX Review Check
-              </Typography>
-            </div>
-          </CardBody>
-        </Card>
+                    <Typography color="blue-gray" className="mb-2 font-nunito font-normal text-Gray1 text-[16px]">
+                      {beranda.data}
+                    </Typography>                  
+                  </div>
+                )
+        })}
       </div>
     </div>
   )
