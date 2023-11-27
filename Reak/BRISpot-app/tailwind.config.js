@@ -13,6 +13,12 @@ module.exports = withMT({
         'BackgroundColor': '#F2F2F2',
         'Blue1': '#00529C',
         'BgPrimary': '#012D5A',
+        'Gray1': '#4F4F4F',
+        'Black': '#303030',
+      },
+
+      fontFamily: {
+        nunito: "'Nunito', sans-serif",
       },
     },
   },
