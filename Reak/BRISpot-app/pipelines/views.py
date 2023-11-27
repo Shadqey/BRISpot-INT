@@ -6,6 +6,7 @@ from .models import Pipeline
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics
+from rest_framework.request import Request
 
 # Create your views here.
 
@@ -93,3 +94,7 @@ class DetailPipelineView(generics.RetrieveAPIView):
     queryset = Pipeline.objects.all()
     serializer_class = DetailPipelineSerializer
     lookup_field = 'id'
+    
+class ListPipelineView(generics.ListAPIView):
+    queryset = Pipeline.objects.all()
+    serializer_class = PipelineSerializer

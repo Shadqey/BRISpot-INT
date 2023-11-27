@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'pipelines',
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
-    'corsheaders'
+    'corsheaders',
+    'users',
 ]
 
 REST_FRAMEWORK = {

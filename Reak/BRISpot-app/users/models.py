@@ -44,5 +44,3 @@ class User(BaseModel):
     nomor_handphone = models.CharField(
         max_length=25
     )
-    
-    
