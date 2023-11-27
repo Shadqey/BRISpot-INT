@@ -36,36 +36,33 @@ const TestSidebar = ( {children} ) => {
       setOpen(open === value ? 0 : value);
     }
 
-    const firstItem = [
-        {
-            path:"/",
-            name:"Beranda",
-            iconL:<HomeIcon/>
-        },
-    ];
-
     const menuItem =[
         {
+            id: 1,
             path:"/",
             name:"Beranda",
             iconL:<HomeIcon/>
         },
         {
+            id: 2,
             path:"/pipeline",
             name:"Pipeline",
             iconL:<UserGroupIcon/>
         },
         {
+            id: 3,
             path:"/kunjungannasabah",
             name:"Kunjungan Nasabah",
             iconL:<MapIcon/>
         },
         {
+            id: 4,
             path:"/daftarpengajuan",
             name:"Daftar Pengajuan",
             iconL:<UserIcon/>
         },
         {
+            id: 5,
             path:"/daftarperusahaan",
             name:"Daftar Perusahaan",
             iconL:<BuildingOfficeIcon/>
@@ -92,22 +89,22 @@ const TestSidebar = ( {children} ) => {
                         <Input icon={<MagnifyingGlassIcon className="h-5 w-5" />} label="Search" className='!border bg-white' labelProps={{className: "hidden",}} placeholder='Search'/>
                     </div>
 
-                    <List>
-                        {
-                            menuItem.map((item, index) =>(
-                                <NavLink to={item.path} key={index} className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "active" : ""
+                    {
+                        menuItem.map((data, index) => (
+                            <List>
+                                <NavLink to={data.path} key={index} className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : ""
                                 }>
-                                    <ListItem className='hover:bg-BgPrimary focus:bg-BgPrimary my-1'>
+                                    <ListItem className='hover:bg-BgPrimary focus:bg-BgPrimary'>
                                         <ListItemPrefix>
-                                            <div className="icon h-5 w-5 text-white">{item.iconL}</div>
+                                            <div className="icon h-5 w-5 text-white">{data.iconL}</div>
                                         </ListItemPrefix>
-                                        <div className="link_text text-white">{item.name}</div>
+                                        <div className="link_text text-white">{data.name}</div>
                                     </ListItem>
                                 </NavLink>
-                            ))
-                        }
-                    </List>
+                            </List>
+                        ))
+                    }
                 </aside>
                 
                 {/* Content */}
