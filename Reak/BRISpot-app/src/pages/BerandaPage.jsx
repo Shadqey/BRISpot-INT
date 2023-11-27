@@ -9,7 +9,7 @@ import {
 const BerandaPage = ( {currentPage }) => {
 
   return (
-    <div>
+    <div className='bg-sla'>
       <Typography variant='h4' className='text-center mt-10'>Selamat Datang di Aplikasi BRISPOT WEB</Typography>
       <div>
         <Card className="mt-6 w-full">
