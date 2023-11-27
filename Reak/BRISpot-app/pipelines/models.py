@@ -4,7 +4,7 @@ from core.models import BaseModel
 
 class Pipeline(BaseModel):
     kode_perusahaan = models.CharField(
-        max_length=50, primary_key=True
+        max_length=50
     )
     nama_perusahaan = models.CharField(
         max_length=75
