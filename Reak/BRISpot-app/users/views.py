@@ -8,7 +8,7 @@ from rest_framework import generics
 
 # Create your views here.
 
-class UserView(generics.APIView):
+class DetailUserView(generics.APIView):
     def get(self, request, pk=None, format=None):
         data = self.get_object(pk)
         serializer = UserSerializer(data)
