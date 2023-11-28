@@ -10,7 +10,7 @@ from rest_framework.request import Request
 
 # Create your views here.
 
-class PipelineView(generics.APIView):
+class PipelineView(APIView):
     
     def get(self, request, pk=None, format=None):
         if pk:
