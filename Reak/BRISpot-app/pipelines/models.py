@@ -41,22 +41,20 @@ class Pipeline(BaseModel):
     )
     plafond = models.BigIntegerField()
     dokumentasi_kredit = models.ImageField(
-        upload_to ='dokumentasi_kredit/'
+        upload_to ='dokumentasi_kredit/', null=False
     )
     identitas_perusahaan = models.ImageField(
-        upload_to ='identitas_perusahaan/'
+        upload_to ='identitas_perusahaan/', null=False
     )
     data_financial = models.ImageField(
-        upload_to ='data_financial/'
+        upload_to ='data_financial/', null=False
     )
     legalitas_usaha = models.ImageField(
-        upload_to ='legalitas_usaha/'
+        upload_to ='legalitas_usaha/', null=False
     )
     dokumen_agunan = models.ImageField(
-        upload_to ='dokumen_agunan/'
+        upload_to ='dokumen_agunan/', null=False
     )
     lain_lain = models.ImageField(
-        upload_to ='lain_lain/'
+        upload_to ='lain_lain/', null=False
     )
-    
-    
