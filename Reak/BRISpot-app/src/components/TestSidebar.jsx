@@ -80,18 +80,25 @@ const TestSidebar = ({ children }) => {
       name: "New Pipeline",
       iconL: <HomeIcon />,
     },
+
+    {
+      id: 2,
+      path: "/uploaddokumen",
+      name: "New Pipeline",
+      iconL: <HomeIcon />,
+    },
   ];
 
   const currentPath = useLocation().pathname;
   const currentMenuItem = menuItem.find((item) => item.path === currentPath);
   const currentPageItem = pageItem.find((item) => item.path === currentPath);
 
-  var currentPageName
+  var currentPageName;
 
   if (currentMenuItem) {
-    currentPageName = currentMenuItem.name
+    currentPageName = currentMenuItem.name;
   } else {
-    currentPageName = currentPageItem.name
+    currentPageName = currentPageItem.name;
   }
 
   return (
