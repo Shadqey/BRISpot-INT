@@ -1,6 +1,10 @@
-import { Typography } from "@material-tailwind/react";
+import { Button, Typography } from "@material-tailwind/react";
 import React from "react";
 import searchIcon from "../assets/search.svg";
+import logoBOT from "../assets/logo-bot.svg";
+import logoFCB from "../assets/logo-fcb.svg";
+import logoADB from "../assets/logo-adb.svg";
+import { Link } from "react-router-dom";
 
 const PipelinePage = () => {
   return (
@@ -12,9 +16,11 @@ const PipelinePage = () => {
         New Pipeline
       </Typography>
       <div className="flex flex-col items-center mb-[100px] mt-[50px]">
-        <button className="bg-BgPrimary w-96 p-2 text-white font-bold rounded-lg">
-          Tambahkan Pipeline
-        </button>
+        <Link to="/newpipeline">
+          <Button className="bg-BgPrimary w-96 py-4 text-white font-bold rounded-lg">
+            Tambahkan Pipeline
+          </Button>
+        </Link>
       </div>
 
       <Typography
@@ -24,7 +30,7 @@ const PipelinePage = () => {
         Existing Pipeline
       </Typography>
 
-      <div className="existing w-full bg-white rounded-xl h-[237px]">
+      <div className="existing w-full bg-white rounded-xl h-[237px] mt-[16px]">
         <div className="filter flex w-full bg-BgPrimary h-[56px] rounded-t-lg items-center gap-2">
           <img src={searchIcon} alt="" className="h-6 w-6 ml-[20px]" />
           <Typography className="font-Nunito text-[16px] font-bold text-white">
@@ -59,7 +65,7 @@ const PipelinePage = () => {
         <div className="tombol gap-2 flex ml-[20px]">
           <button
             type="button"
-            class="text-BrandSecondary gap-2 items-center hover:text-white border border-BrandSecondary hover:bg-BrandSecondary focus:ring-2 focus:outline-none focus:ring-BrandSecondary font-bold rounded-lg text-[14px] px-5 py-2.5 text-center me-2 mb-2 inline-flex"
+            className="text-BrandSecondary gap-2 items-center hover:text-white border border-BrandSecondary hover:bg-BrandSecondary focus:ring-2 focus:outline-none focus:ring-BrandSecondary font-bold rounded-lg text-[14px] px-5 py-2.5 text-center me-2 mb-2 inline-flex"
           >
             <svg
               width="19"
@@ -78,7 +84,7 @@ const PipelinePage = () => {
 
           <button
             type="button"
-            class="py-2.5 gap-2 px-5 me-2 mb-2 text-[14px] font-Nunito font-bold text-white hover:bg-orange-400 focus:outline-none bg-BrandSecondary rounded-lg border border-gray-200 focus:z-10 focus:ring-2 focus:ring-gray-200 inline-flex items-center"
+            className="py-2.5 gap-2 px-5 me-2 mb-2 text-[14px] font-Nunito font-bold text-white hover:bg-orange-400 focus:outline-none bg-BrandSecondary rounded-lg border border-gray-200 focus:z-10 focus:ring-2 focus:ring-gray-200 inline-flex items-center"
           >
             <svg
               width="19"
@@ -97,65 +103,150 @@ const PipelinePage = () => {
         </div>
       </div>
 
-      <div class="overflow-x-auto shadow-md sm:rounded-lg my-6">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead class="text-[14px] text-gray-700 uppercase bg-gray-50">
+      <div className="overflow-x-auto shadow-md sm:rounded-lg my-6">
+        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead className="text-[14px] text-white uppercase bg-BgPrimary">
             <tr>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="pl-[22px]">
                 No
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-4">
                 Nama Nasabah
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Group Usaha
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Fasilitas Pinjaman
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Currency
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Plafond
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Status LKN
               </th>
             </tr>
           </thead>
-          <tbody>
-            <tr class="bg-white border-b">
+
+          <tbody className="font-bold text-Black">
+            <tr className="bg-white border-b">
               <th
                 scope="row"
-                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                className="px-6 py-4 whitespace-nowrap dark:text-white"
                 rowSpan={2}
               >
                 1
               </th>
-              <td class="px-6 py-4" rowSpan={3}>
-                Bank of Taiwan
+              <td className="px-6 py-4 w-52" rowSpan={2}>
+                <div className="flex items-center gap-4">
+                  <img src={logoBOT} alt="" />
+                  Bank of Taiwan
+                </div>
               </td>
-              <td class="px-6 py-4" rowSpan={3}>
+              <td className="px-6 py-4" rowSpan={2}>
                 Bank of Taiwan Group
               </td>
-              <td class="px-6 py-4">KI</td>
-              <td class="px-6 py-4">IDR</td>
-              <td class="px-6 py-4">2.000.000.000.000</td>
+              <td className="px-6 py-4">KI</td>
+              <td className="px-6 py-4">IDR</td>
+              <td className="px-6 py-4">2.000.000.000.000</td>
 
-              <td class="px-6 py-4" rowSpan={3}>
+              <td className="px-6 py-4" rowSpan={2}>
                 <button
                   type="button"
-                  class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="text-white bg-Green hover:bg-Green1 focus:outline-none focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                 >
-                  Default
+                  Sudah
                 </button>
               </td>
             </tr>
-            <tr class="bg-white">
-              <td class="px-6 py-4">BG</td>
-              <td class="px-6 py-4">IDR</td>
-              <td class="px-6 py-4">500.000.000.000</td>
+            <tr className="bg-white border-b">
+              <td className="px-6 py-4">BG</td>
+              <td className="px-6 py-4">IDR</td>
+              <td className="px-6 py-4">500.000.000.000</td>
+            </tr>
+
+            <tr className="bg-white border-b">
+              <th
+                scope="row"
+                className="px-6 py-4 whitespace-nowrap dark:text-white"
+                rowSpan={2}
+              >
+                2
+              </th>
+              <td className="px-6 py-4 w-[226px]" rowSpan={2}>
+                <div className="flex items-center gap-4">
+                  <img src={logoFCB} alt="" />
+                  First Commercial Bank
+                </div>
+              </td>
+              <td className="px-6 py-4" rowSpan={2}>
+                Bank of Taiwan Group
+              </td>
+              <td className="px-6 py-4">KI</td>
+              <td className="px-6 py-4">IDR</td>
+              <td className="px-6 py-4">2.000.000.000.000</td>
+
+              <td className="px-6 py-4" rowSpan={2}>
+                <button
+                  type="button"
+                  className="text-white bg-Green hover:bg-Green1 focus:outline-none focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                >
+                  Sudah
+                </button>
+              </td>
+            </tr>
+            <tr className="bg-white border-b">
+              <td className="px-6 py-4">KMK</td>
+              <td className="px-6 py-4">IDR</td>
+              <td className="px-6 py-4">900.000.000.000</td>
+            </tr>
+
+            <tr className="bg-white border-b">
+              <th
+                scope="row"
+                className="px-6 py-4 whitespace-nowrap dark:text-white"
+                rowSpan={3}
+              >
+                3
+              </th>
+              <td className="px-6 py-4 w-[226px]" rowSpan={3}>
+                <div className="flex items-center gap-4">
+                  <img
+                    src={logoADB}
+                    alt=""
+                    className="outline outline-2 outline-BgPrimary rounded-full"
+                  />
+                  First Abu Dhabi Bank
+                </div>
+              </td>
+              <td className="px-6 py-4" rowSpan={3}>
+                FAB Group
+              </td>
+              <td className="px-6 py-4">KI</td>
+              <td className="px-6 py-4">IDR</td>
+              <td className="px-6 py-4">2.000.000.000.000</td>
+
+              <td className="px-6 py-4" rowSpan={3}>
+                <button
+                  type="button"
+                  className="text-white bg-Green hover:bg-Green1 focus:outline-none focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                >
+                  Sudah
+                </button>
+              </td>
+            </tr>
+            <tr className="bg-white border-b">
+              <td className="px-6 py-4">KMK</td>
+              <td className="px-6 py-4">IDR</td>
+              <td className="px-6 py-4">2.000.000.000.000</td>
+            </tr>
+            <tr className="bg-white border-b">
+              <td className="px-6 py-4">BG</td>
+              <td className="px-6 py-4">IDR</td>
+              <td className="px-6 py-4">900.000.000.000</td>
             </tr>
           </tbody>
         </table>

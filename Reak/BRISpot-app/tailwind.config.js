@@ -16,6 +16,8 @@ module.exports = withMT({
         'Gray1': '#4F4F4F',
         'Black': '#303030',
         'BrandSecondary': '#ED6E12',
+        'Green': '#219653',
+        'Green1': '#3AB870'
       },
 
       fontFamily: {
