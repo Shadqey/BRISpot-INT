@@ -73,9 +73,26 @@ const TestSidebar = ({ children }) => {
     },
   ];
 
+  const pageItem = [
+    {
+      id: 1,
+      path: "/newpipeline",
+      name: "New Pipeline",
+      iconL: <HomeIcon />,
+    },
+  ];
+
   const currentPath = useLocation().pathname;
   const currentMenuItem = menuItem.find((item) => item.path === currentPath);
-  const currentPageName = currentMenuItem ? currentMenuItem.name : "";
+  const currentPageItem = pageItem.find((item) => item.path === currentPath);
+
+  var currentPageName
+
+  if (currentMenuItem) {
+    currentPageName = currentMenuItem.name
+  } else {
+    currentPageName = currentPageItem.name
+  }
 
   return (
     <div className="sidebar flex bg-BackgroundColor">
