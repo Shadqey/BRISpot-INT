@@ -7,7 +7,6 @@ import KunjunganNasabah from './pages/KunjunganNasabah'
 import PipelinePage from './pages/PipelinePage'
 import DaftarPengajuan from './pages/DaftarPengajuan'
 import DaftarPerusahaan from './pages/DaftarPerusahaan'
-import NewPipeline from './pages/NewPipeline'
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
           <Route path='/' Component={BerandaPage}></Route>
           <Route path='/kunjungannasabah' Component={KunjunganNasabah}></Route>
           <Route path='/pipeline' Component={PipelinePage}></Route>
-          <Route path='/newpipeline' Component={NewPipeline}></Route>
           <Route path='/daftarpengajuan' Component={DaftarPengajuan}></Route>
           <Route path='/daftarperusahaan' Component={DaftarPerusahaan}></Route>
         </Routes>
