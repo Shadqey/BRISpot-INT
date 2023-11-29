@@ -19,6 +19,7 @@ public class Pipeline {
     private Long id;
 
     @NonNull
+    @Column(unique = true)
     private String kodePerusahaan;
 
     private String namaPerusahaan;

@@ -1,16 +1,18 @@
 package com.brispot.dev.BRISpot;
 
 import com.brispot.dev.BRISpot.model.Pipeline;
-import com.brispot.dev.BRISpot.model.User;
+// import com.brispot.dev.BRISpot.model.User;
 
 import com.brispot.dev.BRISpot.model.PipelineRepository;
 
 import org.springframework.boot.CommandLineRunner;
+// import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-import java.time.Instant;
-import java.util.Collections;
+// import java.time.Instant;
+// import java.util.Collections;
 import java.util.stream.Stream;
+import java.util.Optional;
 
 @Component
 class Initializer implements CommandLineRunner {
@@ -27,9 +29,13 @@ class Initializer implements CommandLineRunner {
             repository.save(new Pipeline(kodePerusahaan))
         );
 
-        Pipeline a = repository.findByKodePerusahaan("A");
-        
-        repository.save(a);
+        Optional<Pipeline> a = repository.findByKodePerusahaan("A");
+        Pipeline finalA;
+
+        if (a.isPresent()) {
+            finalA = a.get();
+            repository.save(finalA);
+        }
 
         repository.findAll().forEach(System.out::println);
     }

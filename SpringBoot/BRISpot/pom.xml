@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.0</version>
+		<version>3.0.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.brispot.dev</groupId>
@@ -15,6 +15,9 @@
 	<description>BRISpot SpringBoot Project</description>
 	<properties>
 		<java.version>17</java.version>
+		<frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
+        <node.version>v18.16.0</node.version>
+        <npm.version>9.6.5</npm.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -29,16 +32,29 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!-- <dependency>
+            <groupId>com.brispot.spring</groupId>
+            <artifactId>brispot-spring-boot-starter</artifactId>
+            <version>3.0.3</version>
+        </dependency> -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -47,6 +63,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.6.2</version>
 				<configuration>
 					<excludes>
 						<exclude>
@@ -56,6 +73,15 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<!-- <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.3</version>
+				<configuration>
+					<source>17</source>
+					<target>17</target>
+            	</configuration>
+        	</plugin> -->
 		</plugins>
 	</build>
 
