@@ -14,7 +14,8 @@ import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.Optional;
 
-
+@RestController
+@RequestMapping("/api")
 public class PipelineController {
     
     private final Logger log = LoggerFactory.getLogger(PipelineController.class);
@@ -46,14 +47,14 @@ public class PipelineController {
             .body(result);
     }
 
-    @PutMapping("/group/{kodePerusahaan}")
+    @PutMapping("/pipeline/{kodePerusahaan}")
     ResponseEntity<Pipeline> updatePipeline(@Valid @RequestBody Pipeline pipeline) {
         log.info("Request to update pipeline: {}", pipeline);
         Pipeline result = pipelineRepository.save(pipeline);
         return ResponseEntity.ok().body(result);
     }
 
-    @DeleteMapping("/group/{kodePerusahaan}")
+    @DeleteMapping("/pipeline/{kodePerusahaan}")
     public ResponseEntity<?> deletePipeline(@PathVariable String kodePerusahaan) {
         log.info("Request to delete pipeline: {}", kodePerusahaan);
         pipelineRepository.deleteByKodePerusahaan(kodePerusahaan);
