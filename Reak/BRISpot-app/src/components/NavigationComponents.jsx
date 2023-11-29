@@ -1,28 +1,97 @@
-import React from 'react'
+import React from "react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Typography } from '@material-tailwind/react';
-import iconBell from '../assets/Interface Icon.svg'
+import {
+  Navbar,
+  MobileNav,
+  Typography,
+  Button,
+  IconButton,
+  Card,
+} from "@material-tailwind/react";
+import iconBell from "../assets/Interface Icon.svg";
 
+const NavigationComponents = ({ currentPage }) => {
+  const [openNav, setOpenNav] = React.useState(false);
 
+  React.useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 960 && setOpenNav(false)
+    );
+  }, []);
 
-const NavigationComponents = ( {currentPage} ) => {
+  const navList = (
+    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center">
+          Pages
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center">
+          Account
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center">
+          Blocks
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center">
+          Docs
+        </a>
+      </Typography>
+    </ul>
+  );
+
   return (
-    <header className="sticky top-0 z-999 flex w-full bg-[#FAFAFA] drop-shadow-lg dark:bg-boxdark dark:drop-shadow-none">
-        <div className="flex flex-grow items-center py-4 px-4 shadow-2 md:px-6 2xl:px-3">
-            <div className="hidden sm:block">
-                <Typography variant='h1' className='text-[#303030] text-xl font-extrabold font-Nunito w-[916px]'>{currentPage}</Typography>
-            </div>
-            
-            <div className="flex items-center gap-8">
-                <div className='h-6 w-6'><a href="#"><img src={iconBell} alt="" /></a></div>
-                <a href="" className='flex h-6 w-6 gap-2 font-nunito'>
-                  <img src={iconBell} alt="" />
-                  Logout
-                </a>
-            </div>
-        </div>
-    </header>
-  )
-}
+    <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
+      <div className="flex items-center justify-between text-blue-gray-900">
+        <Typography
+          variant="h1"
+          className="text-[#303030] text-xl font-extrabold font-Nunito"
+        >
+          {currentPage}
+        </Typography>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-x-1">
+            <Button variant="text" size="sm" className="hidden lg:inline-block">
+              <span>Log In</span>
+            </Button>
 
-export default NavigationComponents
+            <Button
+              variant="gradient"
+              size="sm"
+              className="hidden lg:inline-block"
+            >
+              <span>Sign in</span>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </Navbar>
+  );
+};
+
+export default NavigationComponents;
