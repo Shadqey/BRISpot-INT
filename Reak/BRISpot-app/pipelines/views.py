@@ -3,10 +3,10 @@ from pipelines.models import Pipeline
 from django.http import HttpResponse, Http404
 from .serializers import PipelineSerializer, DetailPipelineSerializer
 from .models import Pipeline
+from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import generics
-from rest_framework.request import Request
+from rest_framework import status
 
 # Create your views here.
 
@@ -90,11 +90,11 @@ class UpdatePipeline(APIView):
         serializer = PipelineSerializer(pipeline)
         return Response(serializer.data)
     
-class DetailPipelineView(generics.RetrieveAPIView):
+class DetailPipelineView(APIView):
     queryset = Pipeline.objects.all()
     serializer_class = DetailPipelineSerializer
     lookup_field = 'id'
     
-class ListPipelineView(generics.ListAPIView):
+class ListPipelineView(APIView):
     queryset = Pipeline.objects.all()
     serializer_class = PipelineSerializer
