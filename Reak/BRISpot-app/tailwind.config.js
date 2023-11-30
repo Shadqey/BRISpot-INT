@@ -6,6 +6,7 @@ module.exports = withMT({
     "./src/**/*.{vue,js,ts,jsx,tsx}",
     "path-to-your-node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
     "path-to-your-node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
     extend: {
@@ -17,7 +18,8 @@ module.exports = withMT({
         'Black': '#303030',
         'BrandSecondary': '#ED6E12',
         'Green': '#219653',
-        'Green1': '#3AB870'
+        'Green1': '#3AB870',
+        'Gray4': '#E0E0E0',
       },
 
       fontFamily: {
@@ -25,6 +27,8 @@ module.exports = withMT({
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 });
 
