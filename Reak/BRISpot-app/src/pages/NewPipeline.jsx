@@ -50,7 +50,7 @@ const NewPipeline = () => {
 
   return (
     <div className="w-full">
-      <div className="grid md:grid-cols-2 gap-2 mr-[30px]">
+      <div className="grid md:grid-cols-2 gap-4 mr-[30px] w-full">
         <div className="text-center">
           <Link to="/newpipeline">
             <Button className="w-full bg-BgPrimary">Form New Pipeline</Button>
@@ -64,7 +64,7 @@ const NewPipeline = () => {
       </div>
 
       <div className=" bg-white mt-6 rounded-xl">
-        <div className="flex items-center pl-[30px] pt-[30px]">
+        <div className="flex items-center pl-[30px] pt-[30px] gap-4">
           <img src={iconForm} alt="" className="h-6 w-6" />
           <Typography className="font-bold text-[18px] text-Blue1 font-Nunito">
             Forum New Pipeline
@@ -324,9 +324,27 @@ const NewPipeline = () => {
         ))}
       </div>
 
-      <div className="flex flex-row gap-4 mt-6">
-        <Button>Tambah Perusahaan</Button>
-        <Button>Tambah Perusahaan</Button>
+      <div className="flex flex-row gap-4 mt-6 ml-[63%]">
+        <Button className="bg-BgPrimary capitalize font-Nunito text-base font-bold flex items-center gap-2">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 28 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.8085 2.33325C14.1953 2.33325 14.5662 2.4869 14.8397 2.76039C15.1132 3.03388 15.2668 3.40481 15.2668 3.79159V12.5416H24.0168C24.4036 12.5416 24.7746 12.6952 25.048 12.9687C25.3215 13.2422 25.4752 13.6131 25.4752 13.9999C25.4752 14.3867 25.3215 14.7576 25.048 15.0311C24.7746 15.3046 24.4036 15.4583 24.0168 15.4583H15.2668V24.2083C15.2668 24.595 15.1132 24.966 14.8397 25.2394C14.5662 25.5129 14.1953 25.6666 13.8085 25.6666C13.4217 25.6666 13.0508 25.5129 12.7773 25.2394C12.5038 24.966 12.3502 24.595 12.3502 24.2083V15.4583H3.60018C3.2134 15.4583 2.84247 15.3046 2.56898 15.0311C2.29549 14.7576 2.14185 14.3867 2.14185 13.9999C2.14185 13.6131 2.29549 13.2422 2.56898 12.9687C2.84247 12.6952 3.2134 12.5416 3.60018 12.5416H12.3502V3.79159C12.3502 3.40481 12.5038 3.03388 12.7773 2.76039C13.0508 2.4869 13.4217 2.33325 13.8085 2.33325V2.33325Z"
+              fill="white"
+            />
+          </svg>
+          Tambah Perusahaan
+        </Button>
+        <Link to="/uploaddokumen">
+          <Button className="capitalize bg-BrandSecondary font-Nunito text-base">
+            Selanjutnya
+          </Button>
+        </Link>
       </div>
     </div>
   );
