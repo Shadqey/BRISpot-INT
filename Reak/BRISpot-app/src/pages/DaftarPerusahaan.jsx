@@ -1,7 +1,7 @@
 import React from "react";
 import searchIcon from "../assets/search.svg";
 import { Typography } from "@material-tailwind/react";
-import { Button } from "flowbite-react";
+import { Button, Table, TableHead, TableHeadCell } from "flowbite-react";
 
 const DaftarPerusahaan = () => {
   return (
@@ -14,7 +14,7 @@ const DaftarPerusahaan = () => {
           </Typography>
         </div>
 
-        <form className="mt-[26px] mr-[20px]">
+        <form className="mt-[26px] mr-[20px] mb-[26px]">
           <div className="grid gap-4 mb-6 ml-[20px] md:grid-cols-3">
             <div>
               <label className="block mb-2 text-[16px] font-bold text-Black">
@@ -83,6 +83,24 @@ const DaftarPerusahaan = () => {
             </Button>
           </div>
         </form>
+      </div>
+
+      <div className="overflow-x-auto mt-[50px]">
+        <Table>
+          <TableHead>
+            <TableHeadCell>VCIF</TableHeadCell>
+            <TableHeadCell>CIF</TableHeadCell>
+            <TableHeadCell>Nasabah</TableHeadCell>
+            <TableHeadCell>Fasilitas</TableHeadCell>
+            <TableHeadCell>Nomor Rekening</TableHeadCell>
+            <TableHeadCell>Plafond</TableHeadCell>
+            <TableHeadCell>Outstanding</TableHeadCell>
+            <TableHeadCell>Tanggal Realisasi</TableHeadCell>
+            <TableHeadCell>Jatuh Tempo</TableHeadCell>
+            <TableHeadCell>Suku Bunga</TableHeadCell>
+            <TableHeadCell>Activity</TableHeadCell>
+          </TableHead>
+        </Table>
       </div>
     </div>
   );
