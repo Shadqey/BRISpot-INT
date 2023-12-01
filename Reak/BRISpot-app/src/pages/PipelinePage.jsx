@@ -8,13 +8,14 @@ import { Link } from "react-router-dom";
 
 const PipelinePage = () => {
   return (
-    <div>
+    <div className="mt-4">
       <Typography
         variant="h5"
         className="font-Nunito font-extrabold text-Gray1"
       >
         New Pipeline
       </Typography>
+
       <div className="flex flex-col items-center mb-[100px] mt-[50px]">
         <Link to="/newpipeline">
           <Button className="bg-BgPrimary w-96 py-4 text-white font-bold rounded-lg">
