@@ -1,7 +1,15 @@
 import React from "react";
 import searchIcon from "../assets/search.svg";
 import { Typography } from "@material-tailwind/react";
-import { Button, Table, TableHead, TableHeadCell } from "flowbite-react";
+import {
+  Button,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeadCell,
+  TableRow,
+} from "flowbite-react";
 
 const DaftarPerusahaan = () => {
   return (
@@ -86,20 +94,160 @@ const DaftarPerusahaan = () => {
       </div>
 
       <div className="overflow-x-auto mt-[50px]">
-        <Table>
-          <TableHead>
-            <TableHeadCell>VCIF</TableHeadCell>
-            <TableHeadCell>CIF</TableHeadCell>
-            <TableHeadCell>Nasabah</TableHeadCell>
-            <TableHeadCell>Fasilitas</TableHeadCell>
-            <TableHeadCell>Nomor Rekening</TableHeadCell>
-            <TableHeadCell>Plafond</TableHeadCell>
-            <TableHeadCell>Outstanding</TableHeadCell>
-            <TableHeadCell>Tanggal Realisasi</TableHeadCell>
-            <TableHeadCell>Jatuh Tempo</TableHeadCell>
-            <TableHeadCell>Suku Bunga</TableHeadCell>
-            <TableHeadCell>Activity</TableHeadCell>
+        <Table striped>
+          <TableHead className="">
+            <TableHeadCell className="font-Nunito text-sm bg-BgPrimary text-white">
+              VCIF
+            </TableHeadCell>
+            <TableHeadCell className="font-Nunito text-sm bg-BgPrimary text-white">
+              CIF
+            </TableHeadCell>
+            <TableHeadCell className="capitalize font-Nunito text-sm bg-BgPrimary text-white">
+              Nasabah
+            </TableHeadCell>
+            <TableHeadCell className="capitalize font-Nunito text-sm bg-BgPrimary text-white">
+              Fasilitas
+            </TableHeadCell>
+            <TableHeadCell className="capitalize font-Nunito text-sm bg-BgPrimary text-white">
+              Nomor Rekening
+            </TableHeadCell>
+            <TableHeadCell className="capitalize font-Nunito text-sm bg-BgPrimary text-white">
+              Plafond
+            </TableHeadCell>
+            <TableHeadCell className="capitalize font-Nunito text-sm bg-BgPrimary text-white">
+              Outstanding
+            </TableHeadCell>
+            <TableHeadCell className="capitalize font-Nunito text-sm bg-BgPrimary text-white">
+              Tanggal Realisasi
+            </TableHeadCell>
+            <TableHeadCell className="capitalize font-Nunito text-sm bg-BgPrimary text-white">
+              Jatuh Tempo
+            </TableHeadCell>
+            <TableHeadCell className="capitalize font-Nunito text-sm bg-BgPrimary text-white">
+              Suku Bunga
+            </TableHeadCell>
+            <TableHeadCell className="capitalize font-Nunito text-sm bg-BgPrimary text-white">
+              Activity
+            </TableHeadCell>
           </TableHead>
+
+          <TableBody className="font-normal text-Black">
+            {/* Row 1 */}
+            <TableRow className="border-b">
+              <TableCell rowSpan={2}>VCIF213</TableCell>
+              <TableCell rowSpan={2}>JBK3341</TableCell>
+              <TableCell rowSpan={2}>PT Multifabrindo Gemilang</TableCell>
+              <TableCell>KI</TableCell>
+              <TableCell>372910563902481</TableCell>
+              <TableCell className="">Rp.1.000.000.000.000</TableCell>
+              <TableCell>Rp.500.000.000.000</TableCell>
+              <TableCell>06/07/2023</TableCell>
+              <TableCell>07/07/2024</TableCell>
+              <TableCell>12,5%</TableCell>
+              <TableCell
+                rowSpan={2}
+                className="font-bold font-Nunito text-Blue1"
+              >
+                Lihat
+              </TableCell>
+            </TableRow>
+            <TableRow className="border-b">
+              <TableCell>KMK</TableCell>
+              <TableCell>518247309725039</TableCell>
+              <TableCell>Rp.3.000.000.000.000</TableCell>
+              <Table.Cell>Rp.2.400.000.000.000</Table.Cell>
+              <TableCell>10/05/2023</TableCell>
+              <TableCell>11/05/2024</TableCell>
+              <TableCell>11,5%</TableCell>
+            </TableRow>
+
+            {/* Row 2 */}
+            <TableRow>
+              <TableCell rowSpan={2}>VCIF443</TableCell>
+              <TableCell rowSpan={2}>AKB2231</TableCell>
+              <TableCell rowSpan={2}>Coca Cola Indonesia</TableCell>
+              <TableCell>KMK</TableCell>
+              <TableCell>937012845610823</TableCell>
+              <TableCell>Rp.2.000.000.000.000</TableCell>
+              <TableCell>Rp.800.000.000.000</TableCell>
+              <TableCell>17/05/2023</TableCell>
+              <TableCell>17/05/2024</TableCell>
+              <TableCell>12%</TableCell>
+              <TableCell rowSpan={2} className="font-bold text-Blue1">
+                Lihat
+              </TableCell>
+            </TableRow>
+            <TableRow className="border-b">
+              <TableCell>BG</TableCell>
+              <TableCell>620583197406215</TableCell>
+              <TableCell>Rp.500.000.000.000</TableCell>
+              <TableCell>Rp.300.000.000.000</TableCell>
+              <TableCell>16/06/2023</TableCell>
+              <TableCell>16/06/2024</TableCell>
+              <TableCell>12%</TableCell>
+            </TableRow>
+
+            {/* Row 3 */}
+            <TableRow>
+              <TableCell rowSpan={2}>VCIF112</TableCell>
+              <TableCell rowSpan={2}>BBY7781</TableCell>
+              <TableCell rowSpan={2}>PT. Astra Argo Lestari</TableCell>
+              <TableCell>KMK</TableCell>
+              <TableCell>204897506381259</TableCell>
+              <TableCell>Rp.2.000.000.000.000</TableCell>
+              <TableCell>Rp.900.000.000.000</TableCell>
+              <TableCell>07/08/2023</TableCell>
+              <TableCell>07/08/2024</TableCell>
+              <TableCell>12%</TableCell>
+              <TableCell rowSpan={2} className="font-bold text-Blue1">
+                Lihat
+              </TableCell>
+            </TableRow>
+            <TableRow className="border-b">
+              <TableCell>BG</TableCell>
+              <TableCell>980236571492386</TableCell>
+              <TableCell>Rp.2.000.000.000.000</TableCell>
+              <TableCell>Rp.1.200.000.000.000</TableCell>
+              <TableCell>19/07/2023</TableCell>
+              <TableCell>19/07/2024</TableCell>
+              <TableCell>12%</TableCell>
+            </TableRow>
+
+            {/* Row 4 */}
+            <TableRow>
+              <TableCell rowSpan={3}>VCIF543</TableCell>
+              <TableCell rowSpan={3}>LKH234</TableCell>
+              <TableCell rowSpan={3}>PT. Perusahaan Gas Negara</TableCell>
+              <TableCell>KI</TableCell>
+              <TableCell>742103685901237</TableCell>
+              <TableCell>Rp.2.000.000.000.000</TableCell>
+              <TableCell>Rp.1.100.000.000.000</TableCell>
+              <TableCell>08/06/2023</TableCell>
+              <TableCell>08/06/2024</TableCell>
+              <TableCell>12%</TableCell>
+              <TableCell rowSpan={3} className="font-bold text-Blue1">
+                Lihat
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>KMK</TableCell>
+              <TableCell>365809174293015</TableCell>
+              <TableCell>Rp.2.000.000.000.000</TableCell>
+              <TableCell>Rp.800.000.000.000</TableCell>
+              <TableCell>04/07/2023</TableCell>
+              <TableCell>04/07/2024</TableCell>
+              <TableCell>12%</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>BG</TableCell>
+              <TableCell>620453197431215</TableCell>
+              <TableCell>Rp.500.000.000.000</TableCell>
+              <TableCell>Rp.400.000.000.000</TableCell>
+              <TableCell>12/05/2023</TableCell>
+              <TableCell>12/05/2024</TableCell>
+              <TableCell>12%</TableCell>
+            </TableRow>
+          </TableBody>
         </Table>
       </div>
     </div>
