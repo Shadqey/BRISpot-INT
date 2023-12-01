@@ -11,4 +11,5 @@ public interface PipelineRepository extends JpaRepository<Pipeline, String> {
 
     void deleteByKodePerusahaan(String kodePerusahaan);
 
+
 }
