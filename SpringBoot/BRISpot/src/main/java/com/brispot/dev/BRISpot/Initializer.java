@@ -36,16 +36,15 @@ class Initializer implements CommandLineRunner {
 
         userRepository.save(user);
 
-        
-
-        Optional<Pipeline> a = repository.findByKodePerusahaan("A");
+        Optional<Pipeline> a = pipelineRepository.findByKodePerusahaan("A");
         Pipeline finalA;
 
         if (a.isPresent()) {
             finalA = a.get();
-            repository.save(finalA);
+            pipelineRepository.save(finalA);
         }
 
-        repository.findAll().forEach(System.out::println);
+        pipelineRepository.findAll().forEach(System.out::println);
+        userRepository.findAll().forEach(System.out::println);
     }
 }

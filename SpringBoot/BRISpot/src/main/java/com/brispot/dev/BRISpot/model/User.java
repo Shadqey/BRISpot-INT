@@ -48,7 +48,19 @@ public class User {
     private String nomorHandphone;
 
     public User(String nama, String personalNumber, String nip, String jenisKelamin, String eselon, String jabatan, String areaKerja, String subAreaKerja, String unitKerja, String levelId, String rolePengguna, String email, String nomorHandphone) {
-        
+        this.nama = nama;
+        this.personalNumber = personalNumber;
+        this.nip = nip;
+        this.jenisKelamin = jenisKelamin;
+        this.eselon = eselon;
+        this.jabatan = jabatan;
+        this.areaKerja = areaKerja;
+        this.subAreaKerja = subAreaKerja;
+        this.unitKerja = unitKerja;
+        this.levelId = levelId;
+        this.rolePengguna = rolePengguna;
+        this.email = email;
+        this.nomorHandphone = nomorHandphone;
     }
 
 }
