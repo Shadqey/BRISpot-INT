@@ -8,7 +8,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 
-import { FileInput, Label } from "flowbite-react";
+import { FileInput } from "flowbite-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import iconForm from "../assets/icon-form.svg";

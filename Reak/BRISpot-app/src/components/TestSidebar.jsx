@@ -19,6 +19,7 @@ import {
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { NavLink, useLocation } from "react-router-dom";
 import NavigationComponents from "./NavigationComponents";
+import logoBlast from "../assets/logo-blast.svg";
 
 const TestSidebar = ({ children }) => {
   const [open, setOpen] = React.useState(0);
@@ -74,6 +75,34 @@ const TestSidebar = ({ children }) => {
       name: "New Pipeline",
       iconL: <HomeIcon />,
     },
+
+    {
+      id: 3,
+      path: "/riwayatkunjungan",
+      name: "Kunjungan Nasabah",
+      iconL: <MapIcon />,
+    },
+
+    {
+      id: 4,
+      path: "/laporankunjungan",
+      name: "Laporan Kunjungan",
+      iconL: <MapIcon />,
+    },
+
+    {
+      id: 5,
+      path: "/kunjunganaktif",
+      name: "Kunjungan Nasabah",
+      iconL: <MapIcon />,
+    },
+
+    {
+      id: 6,
+      path: "/listmab",
+      name: "Daftar Pengajuan",
+      iconL: <MapIcon />,
+    },
   ];
 
   const currentPath = useLocation().pathname;
@@ -91,15 +120,8 @@ const TestSidebar = ({ children }) => {
   return (
     <div className="bg-BackgroundColor">
       <aside className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-Blue1">
-        <div className="top-section mb-2 flex items-center gap-4 p-4">
-          <img
-            src="https://docs.material-tailwind.com/img/logo-ct-dark.png"
-            alt="brand"
-            className="h-8 w-8"
-          />
-          <Typography variant="h5" color="blue-gray">
-            Sidebar
-          </Typography>
+        <div className="flex justify-center items-center mt-[24px]">
+          <img src={logoBlast} alt="brand" className="w-32" />
         </div>
 
         <div className="p-2 my-2 w-full">

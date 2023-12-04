@@ -129,8 +129,11 @@ const DaftarPengajuan = () => {
               <TableCell>4/18</TableCell>
               <TableCell>0%</TableCell>
               <TableCell>
-                <Link>
-                  <Button className="bg-blue-700 hover:bg-blue-800">
+                <Link to="/listmab">
+                  <Button
+                    className="bg-blue-700 hover:bg-blue-800"
+                    color="blue"
+                  >
                     Input
                   </Button>
                 </Link>
@@ -161,7 +164,10 @@ const DaftarPengajuan = () => {
               <TableCell>50%</TableCell>
               <TableCell>
                 <Link>
-                  <Button className="bg-blue-700 hover:bg-blue-800">
+                  <Button
+                    className="bg-blue-700 hover:bg-blue-800"
+                    color="blue"
+                  >
                     Input
                   </Button>
                 </Link>
@@ -192,7 +198,10 @@ const DaftarPengajuan = () => {
               <TableCell>75%</TableCell>
               <TableCell>
                 <Link>
-                  <Button className="bg-blue-700 hover:bg-blue-800">
+                  <Button
+                    className="bg-blue-700 hover:bg-blue-800"
+                    color="blue"
+                  >
                     Input
                   </Button>
                 </Link>

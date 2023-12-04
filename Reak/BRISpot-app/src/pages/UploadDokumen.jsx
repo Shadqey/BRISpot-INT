@@ -1,16 +1,7 @@
-import {
-  Button,
-  Input,
-  Select,
-  Option,
-  Textarea,
-  Typography,
-  IconButton,
-} from "@material-tailwind/react";
+import { Button, Typography } from "@material-tailwind/react";
 import { Card, FileInput, Label, Modal } from "flowbite-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import imageIgnore from "../assets/ignore.svg";
 
 const UploadDokumen = () => {
   const [openModal, setOpenModal] = useState(false);
