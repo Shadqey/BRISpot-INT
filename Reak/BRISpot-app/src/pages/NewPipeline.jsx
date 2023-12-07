@@ -141,14 +141,17 @@ const NewPipeline = () => {
                 <label className="block mb-2 text-[16px] font-semibold text-Black">
                   Kategori Bank
                 </label>
-                <Input
-                  type="email"
+                <Select
+                  label="Kode Perusahaan"
                   className="!border !border-Gray4 bg-white text-gray-900 focus:ring-2 focus:outline-none"
                   labelProps={{
                     className: "hidden",
                   }}
                   containerProps={{ className: "min-w-[100px]" }}
-                />
+                >
+                  <Option>Internasional</Option>
+                  <Option>Domestik</Option>
+                </Select>
               </div>
 
               {/* Negara Asal */}
@@ -175,16 +178,21 @@ const NewPipeline = () => {
               {/* Kategori Perusahaan */}
               <div>
                 <label className="block mb-2 text-[16px] font-semibold text-Black">
-                  Kategori Perusahaan
+                  Jenis Bank
                 </label>
-                <Input
-                  type="email"
+                <Select
+                  label="Kode Perusahaan"
                   className="!border !border-Gray4 bg-white text-gray-900 focus:ring-2 focus:outline-none"
                   labelProps={{
                     className: "hidden",
                   }}
                   containerProps={{ className: "min-w-[100px]" }}
-                />
+                >
+                  <Option>Commercial Bank</Option>
+                  <Option>Investment Bank</Option>
+                  <Option>Universal Bank</Option>
+                  <Option>Syariah/Islamic Bank</Option>
+                </Select>
               </div>
             </div>
 
@@ -214,24 +222,7 @@ const NewPipeline = () => {
               containerProps={{ className: "min-w-[100px]" }}
             />
 
-            <div className="grid gap-6 md:grid-cols-2 mt-2">
-              <div>
-                <label className="block mb-2 mt-2 text-[16px] font-semibold text-Black">
-                  Sektor Industri
-                </label>
-                <Select
-                  label="Kode Perusahaan"
-                  className="!border !border-Gray4 bg-white text-gray-900 focus:ring-2 focus:outline-none"
-                  labelProps={{
-                    className: "hidden",
-                  }}
-                  containerProps={{ className: "min-w-[100px]" }}
-                >
-                  <Option>Bank Domestik</Option>
-                  <Option>Bank Internasional</Option>
-                </Select>
-              </div>
-
+            <div>
               <div className="mb-2">
                 <label class="block mb-2 mt-2 text-[16px] font-semibold text-Black">
                   Logo Perusahaan
@@ -243,7 +234,7 @@ const NewPipeline = () => {
               </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-4 mt-2">
+            <div className="grid gap-8 md:grid-cols-5 mt-2">
               <div>
                 <label className="block mt-2 mb-2 text-[16px] font-semibold text-Black">
                   Fasilitas Pinjaman
@@ -296,6 +287,20 @@ const NewPipeline = () => {
                   }}
                   containerProps={{ className: "min-w-[100px]" }}
                   placeholder="0"
+                />
+              </div>
+
+              <div>
+                <label className="block mb-2 mt-2 text-[16px] font-semibold text-Black">
+                  Eksposure
+                </label>
+                <Input
+                  type="email"
+                  className="!border !border-Gray4 bg-white text-gray-900 focus:ring-2 focus:outline-none"
+                  labelProps={{
+                    className: "hidden",
+                  }}
+                  containerProps={{ className: "min-w-[100px]" }}
                 />
               </div>
 

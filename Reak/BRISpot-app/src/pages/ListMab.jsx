@@ -241,7 +241,7 @@ const ListMab = () => {
                 26/10/2023
               </Typography>
             </div>
-            <Link>
+            <Link to={"/profitnasabah"}>
               <Button color="blue" className="bg-Blue1">
                 Mulai
                 <ArrowRight

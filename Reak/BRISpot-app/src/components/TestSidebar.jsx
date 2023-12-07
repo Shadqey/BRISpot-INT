@@ -110,6 +110,13 @@ const TestSidebar = ({ children }) => {
       name: "Informasi Nasabah",
       iconL: <MapIcon />,
     },
+
+    {
+      id: 8,
+      path: "/profitnasabah",
+      name: "Profitabilitas Nasabah",
+      iconL: <MapIcon />,
+    },
   ];
 
   const currentPath = useLocation().pathname;

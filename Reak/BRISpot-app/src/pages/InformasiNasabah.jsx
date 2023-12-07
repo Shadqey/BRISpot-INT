@@ -3,6 +3,10 @@ import {
   Card,
   Checkbox,
   Label,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
   Select,
   TabItem,
   Table,
@@ -21,6 +25,7 @@ import { Typography } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 const InformasiNasabah = () => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <div className="h-full">
       <Tabs style="underline" className="mt-[16px] w-full gap-6">
@@ -47,58 +52,6 @@ const InformasiNasabah = () => {
                 rightIcon={Location}
               />
 
-              <div className="grid grid-cols-3 gap-6">
-                <div>
-                  <Label
-                    htmlFor="email1"
-                    value="Sektor Usaha"
-                    className="font-nunito text-base text-Black"
-                  />
-                  <TextInput
-                    id="email1"
-                    type="email"
-                    required
-                    className="mt-2 mb-4"
-                    placeholder="Perbankan"
-                    disabled
-                  />
-                </div>
-
-                <div>
-                  <Label
-                    htmlFor="email1"
-                    value="Tahun Menjadi Nasabah BRI"
-                    className="font-nunito text-base text-Black"
-                  />
-                  <TextInput
-                    id="email1"
-                    type="email"
-                    required
-                    className="mt-2 mb-4"
-                  />
-                </div>
-
-                <div>
-                  <Label
-                    htmlFor="email1"
-                    value="Rating Internal"
-                    className="font-nunito text-base text-Black"
-                  />
-                  <Select required className="mt-2 mb-4">
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                  </Select>
-                </div>
-              </div>
-
               <Label
                 htmlFor="email1"
                 value="Jenis Bank"
@@ -111,17 +64,55 @@ const InformasiNasabah = () => {
                 <option>Syariah/Islamic Bank</option>
               </Select>
 
-              <Label
-                htmlFor="email1"
-                value="ESG Rating"
-                className="font-nunito text-base text-Black"
-              />
-              <TextInput
-                id="email1"
-                type="email"
-                required
-                className="mt-2 mb-4"
-              />
+              <div>
+                <Label
+                  htmlFor="email1"
+                  value="Tahun Menjadi Nasabah BRI"
+                  className="font-nunito text-base text-Black"
+                />
+                <TextInput
+                  id="email1"
+                  type="email"
+                  required
+                  className="mt-2 mb-4"
+                />
+              </div>
+
+              <div className="grid grid-cols-3 gap-6">
+                <div>
+                  <Label
+                    htmlFor="email1"
+                    value="Country Rank"
+                    className="font-nunito text-base text-Black"
+                  />
+                  <TextInput
+                    id="email1"
+                    type="email"
+                    required
+                    className="mt-2 mb-4"
+                  />
+                </div>
+
+                <div>
+                  <TextInput
+                    id="email1"
+                    type="email"
+                    required
+                    className="mt-8 mb-4"
+                    placeholder="Lembaga Pemeringkat"
+                  />
+                </div>
+
+                <div>
+                  <TextInput
+                    id="email1"
+                    type="email"
+                    required
+                    className="mt-8 mb-4"
+                    placeholder="Date"
+                  />
+                </div>
+              </div>
 
               <div className="grid grid-cols-3 gap-6">
                 <div>
@@ -163,7 +154,7 @@ const InformasiNasabah = () => {
                 <div>
                   <Label
                     htmlFor="email1"
-                    value="Country Rank"
+                    value="Rating Internal"
                     className="font-nunito text-base text-Black"
                   />
                   <TextInput
@@ -171,42 +162,26 @@ const InformasiNasabah = () => {
                     type="email"
                     required
                     className="mt-2 mb-4"
+                    placeholder=""
                   />
                 </div>
 
                 <div>
-                  <TextInput
-                    id="email1"
-                    type="email"
-                    required
-                    className="mt-8 mb-4"
-                    placeholder="Lembaga Pemeringkat"
-                  />
+                  <Select className="mt-8">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                  </Select>
                 </div>
 
                 <div>
-                  <TextInput
-                    id="email1"
-                    type="email"
-                    required
-                    className="mt-8 mb-4"
-                    placeholder="Date"
-                  />
+                  <Select className="mt-8">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                  </Select>
                 </div>
               </div>
-
-              <Label
-                htmlFor="email1"
-                value="Tingkat Kesehatan Bank (Khusus Bank Domestik)"
-                className="font-nunito text-base text-Black"
-              />
-              <Select required className="mt-2 mb-4">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </Select>
 
               <div className="grid grid-cols-3 gap-6 ">
                 <div>
@@ -252,7 +227,33 @@ const InformasiNasabah = () => {
                 </Button>
               </div>
 
-              <Typography className="text-base font-semibold text-Blue1 font-nunito">
+              <Label
+                htmlFor="email1"
+                value="ESG Rating"
+                className="font-nunito text-base text-Black"
+              />
+              <TextInput
+                id="email1"
+                type="email"
+                required
+                className="mt-2 mb-4"
+              />
+
+              <Label
+                htmlFor="email1"
+                value="Tingkat Kesehatan Bank (Khusus Bank Domestik)"
+                className="font-nunito text-base text-Black"
+              />
+              <Select required className="mt-2 mb-4">
+                <option>-</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </Select>
+
+              <Typography className="text-base font-semibold text-Blue1 font-nunito mt-10">
                 Daftar Counterparty Yang Mengajukan Fasilitas
               </Typography>
               <Typography className="text-sm font-semibold text-Blue1 font-nunito">
@@ -750,7 +751,129 @@ const InformasiNasabah = () => {
           </div>
         </TabItem>
 
-        <TabItem title="Pengecekan Kredit"></TabItem>
+        <TabItem title="Pengecekan Kredit">
+          <Card>
+            <Typography className="text-Blue1 font-nunito text-xl font-bold">
+              2.3 Pengecekan Kredit
+            </Typography>
+
+            <form action="">
+              <Table>
+                <TableHead>
+                  <TableHeadCell className="w-[201px] bg-Blue1 text-white text-sm capitalize">
+                    Status
+                  </TableHeadCell>
+                  <TableHeadCell className="w-[201px] bg-Blue1 text-center text-white text-sm capitalize">
+                    Hasil
+                  </TableHeadCell>
+                  <TableHeadCell className="w-[201px] bg-Blue1 text-center text-white text-sm capitalize">
+                    Pengecekan Lainnya
+                  </TableHeadCell>
+                  <TableHeadCell className="w-[201px] bg-Blue1 text-center text-white text-sm capitalize">
+                    Hasil
+                  </TableHeadCell>
+                  <TableHeadCell className="w-[201px] bg-Blue1 text-center text-white text-sm capitalize">
+                    Catatan
+                  </TableHeadCell>
+                </TableHead>
+
+                <TableBody>
+                  <TableRow>
+                    <TableCell>Slik Nasabah</TableCell>
+                    <TableCell>
+                      <Select>
+                        <option>-</option>
+                        <option>Lancar</option>
+                        <option>Dalam Perhatian Khusus</option>
+                        <option>Kurang Lancar</option>
+                        <option>Diragukan</option>
+                        <option>Macet</option>
+                      </Select>
+                    </TableCell>
+                    <TableCell>Sector Classification</TableCell>
+                    <TableCell>
+                      <Select>
+                        <option>Sesuai</option>
+                        <option>Tidak Sesuai</option>
+                      </Select>
+                    </TableCell>
+                    <TableCell rowSpan={4}>
+                      <Textarea rows={13}></Textarea>
+                    </TableCell>
+                  </TableRow>
+
+                  <TableRow>
+                    <TableCell>Slik Manajemen</TableCell>
+                    <TableCell>
+                      <Select>
+                        <option>-</option>
+                        <option>Lancar</option>
+                        <option>Dalam Perhatian Khusus</option>
+                        <option>Kurang Lancar</option>
+                        <option>Diragukan</option>
+                        <option>Macet</option>
+                      </Select>
+                    </TableCell>
+                    <TableCell>Sector Acceptance Criteria</TableCell>
+                    <TableCell>
+                      <Select>
+                        <option>Sesuai</option>
+                        <option>Tidak Sesuai</option>
+                      </Select>
+                    </TableCell>
+                  </TableRow>
+
+                  <TableRow>
+                    <TableCell>Sanction Screening</TableCell>
+                    <TableCell>
+                      <Select>
+                        <option>Terindikasi</option>
+                        <option>Tidak Terindikasi</option>
+                      </Select>
+                    </TableCell>
+                    <TableCell colSpan={2}>
+                      <div className="flex items-center gap-4">
+                        <Typography className="font-nunito font-bold text-Blue1">
+                          Catatan:
+                        </Typography>
+
+                        <TextInput className="w-full" required />
+                      </div>
+                    </TableCell>
+                  </TableRow>
+
+                  <TableRow>
+                    <TableCell>RMA</TableCell>
+                    <TableCell>
+                      <Select>
+                        <option>Ada</option>
+                        <option>Tidak Ada</option>
+                      </Select>
+                    </TableCell>
+                    <TableCell colSpan={2}>
+                      <div className="flex items-center gap-4">
+                        <Typography className="font-nunito font-bold text-Blue1">
+                          Catatan:
+                        </Typography>
+
+                        <TextInput className="w-full" required />
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </form>
+          </Card>
+
+          <div className="flex items-center justify-end mt-8 gap-4">
+            <Button outline color="success">
+              Kembali
+            </Button>
+            <Link to="/listmab">
+              <Button color="success">Simpan</Button>
+            </Link>
+          </div>
+        </TabItem>
       </Tabs>
     </div>
   );

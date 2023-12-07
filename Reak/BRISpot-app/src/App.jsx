@@ -14,6 +14,7 @@ import LaporanKunjungan from "./pages/LaporanKunjungan";
 import KunjunganAktif from "./pages/KunjunganAktif";
 import ListMab from "./pages/ListMab";
 import InformasiNasabah from "./pages/InformasiNasabah";
+import ProfabilitasNasabah from "./pages/ProfabilitasNasabah";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/daftarpengajuan" Component={DaftarPengajuan}></Route>
           <Route path="/listmab" Component={ListMab}></Route>
           <Route path="/informasinasabah" Component={InformasiNasabah}></Route>
+          <Route path="/profitnasabah" Component={ProfabilitasNasabah}></Route>
           <Route path="/daftarperusahaan" Component={DaftarPerusahaan}></Route>
         </Routes>
       </TestSidebar>
