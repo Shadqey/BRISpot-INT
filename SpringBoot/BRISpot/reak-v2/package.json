@@ -19,6 +19,7 @@
     "@mui/lab": "^5.0.0-alpha.155",
     "@mui/material": "^5.14.20",
     "axios": "^1.6.2",
+    "cors": "^2.8.5",
     "create-vite": "^5.0.0",
     "flowbite-react": "^0.7.0",
     "iconsax-react": "^0.0.8",

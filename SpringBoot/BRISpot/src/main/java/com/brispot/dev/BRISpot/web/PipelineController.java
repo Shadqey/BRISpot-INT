@@ -16,6 +16,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:5173")
 public class PipelineController {
     
     private final Logger log = LoggerFactory.getLogger(PipelineController.class);
