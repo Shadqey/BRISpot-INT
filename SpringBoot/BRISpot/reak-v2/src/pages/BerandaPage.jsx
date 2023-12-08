@@ -5,24 +5,22 @@ import { dataProfile } from "../data/index.js";
 import { Card } from "flowbite-react";
 
 const BerandaPage = ({ currentPage }) => {
-
   const [userObject, setUserObject] = useState([]);
   const [loading, setLoading] = useState(false);
-
 
   useEffect(() => {
     setLoading(true);
 
-    fetch('api/users/90168000')
+    fetch('http://localhost:8080/api/users/90168000')
       .then(response => response.json())
       .then(data => {
         setUserObject(data);
         setLoading(false);
-      })
+      });
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>
+    return <p>Loading...</p>;
   }
 
   return (
@@ -33,52 +31,53 @@ const BerandaPage = ({ currentPage }) => {
       >
         Selamat Datang di Aplikasi BRISPOT WEB
       </Typography>
-      
+
       <Card>
-          return (
-            <div className="flex">
-              <Typography
-              color="blue-gray"
-              className="font-nunito font-bold text-Gray1 text-[16px] w-[193px]">
-              Nama
-              </Typography>
+        <div className="flex">
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-bold text-Gray1 text-[16px] w-[193px]"
+          >
+            Nama
+          </Typography>
 
-              <Typography
-                color="blue-gray"
-                className="font-nunito font-bold text-Gray1 text-[16px] pr-[24px]"
-              >
-                :
-              </Typography>
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-bold text-Gray1 text-[16px] pr-[24px]"
+          >
+            :
+          </Typography>
 
-              <Typography
-                color="blue-gray"
-                className="font-nunito font-normal text-Gray1 text-[16px]"
-              >
-                {userObject.nama}
-              </Typography>
-            </div>
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-normal text-Gray1 text-[16px]"
+          >
+            {userObject.nama}
+          </Typography>
+        </div>
 
-            <div className="flex">
-              <Typography
-              color="blue-gray"
-              className="font-nunito font-bold text-Gray1 text-[16px] w-[193px]">
-              PN
-              </Typography>
+        <div className="flex">
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-bold text-Gray1 text-[16px] w-[193px]"
+          >
+            PN
+          </Typography>
 
-              <Typography
-                color="blue-gray"
-                className="font-nunito font-bold text-Gray1 text-[16px] pr-[24px]"
-              >
-                :
-              </Typography>
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-bold text-Gray1 text-[16px] pr-[24px]"
+          >
+            :
+          </Typography>
 
-              <Typography
-                color="blue-gray"
-                className="font-nunito font-normal text-Gray1 text-[16px]"
-              >
-                {userObject.personalNumber}
-              </Typography>
-            </div>
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-normal text-Gray1 text-[16px]"
+          >
+            {userObject.personalNumber}
+          </Typography>
+        </div>
 
             <div className="flex">
               <Typography
@@ -321,8 +320,7 @@ const BerandaPage = ({ currentPage }) => {
                 {userObject.nomorHandphone}
               </Typography>
             </div>
-          );
-      </Card>
+          </Card>
     </div>
   );
 };
