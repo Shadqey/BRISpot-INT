@@ -11,7 +11,7 @@ const BerandaPage = ({ currentPage }) => {
   useEffect(() => {
     setLoading(true);
 
-    fetch('http://localhost:8080/api/users/90168000')
+    fetch('http://localhost:8080/api/user/90168000')
       .then(response => response.json())
       .then(data => {
         setUserObject(data);
