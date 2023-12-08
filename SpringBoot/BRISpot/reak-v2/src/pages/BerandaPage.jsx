@@ -6,13 +6,14 @@ import { Card } from "flowbite-react";
 
 const BerandaPage = ({ currentPage }) => {
   const [userObject, setUserObject] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const asal = useEffect();
 
   useEffect(() => {
     setLoading(true);
 
-    fetch("api/users/90168000")
+    fetch("http://localhost:8080/api/users/90168000")
       .then((response) => response.json())
       .then((data) => {
         setUserObject(data);
@@ -34,7 +35,6 @@ const BerandaPage = ({ currentPage }) => {
       </Typography>
 
       <Card>
-        return (
         <div className="flex">
           <Typography
             color="blue-gray"
@@ -57,6 +57,7 @@ const BerandaPage = ({ currentPage }) => {
             {userObject.nama}
           </Typography>
         </div>
+
         <div className="flex">
           <Typography
             color="blue-gray"
@@ -79,21 +80,8 @@ const BerandaPage = ({ currentPage }) => {
             {userObject.personalNumber}
           </Typography>
         </div>
+
         <div className="flex">
-          <Typography
-            color="blue-gray"
-            className="font-nunito font-bold text-Gray1 text-[16px] w-[193px]"
-          >
-            NIP
-          </Typography>
-
-          <Typography
-            color="blue-gray"
-            className="font-nunito font-bold text-Gray1 text-[16px] pr-[24px]"
-          >
-            :
-          </Typography>
-
           <Typography
             color="blue-gray"
             className="font-nunito font-normal text-Gray1 text-[16px]"
@@ -101,6 +89,7 @@ const BerandaPage = ({ currentPage }) => {
             {userObject.nip}
           </Typography>
         </div>
+
         <div className="flex">
           <Typography
             color="blue-gray"
@@ -123,6 +112,7 @@ const BerandaPage = ({ currentPage }) => {
             {userObject.jenisKelamin}
           </Typography>
         </div>
+
         <div className="flex">
           <Typography
             color="blue-gray"
@@ -145,6 +135,7 @@ const BerandaPage = ({ currentPage }) => {
             {userObject.eselon}
           </Typography>
         </div>
+
         <div className="flex">
           <Typography
             color="blue-gray"
@@ -167,6 +158,7 @@ const BerandaPage = ({ currentPage }) => {
             {userObject.jabatan}
           </Typography>
         </div>
+
         <div className="flex">
           <Typography
             color="blue-gray"
@@ -189,6 +181,7 @@ const BerandaPage = ({ currentPage }) => {
             {userObject.areaKerja}
           </Typography>
         </div>
+
         <div className="flex">
           <Typography
             color="blue-gray"
@@ -211,6 +204,7 @@ const BerandaPage = ({ currentPage }) => {
             {userObject.subAreaKerja}
           </Typography>
         </div>
+
         <div className="flex">
           <Typography
             color="blue-gray"
@@ -299,6 +293,100 @@ const BerandaPage = ({ currentPage }) => {
             {userObject.email}
           </Typography>
         </div>
+
+        <div className="flex">
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-bold text-Gray1 text-[16px] w-[193px]"
+          >
+            Nomor Handphone
+          </Typography>
+
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-bold text-Gray1 text-[16px] pr-[24px]"
+          >
+            :
+          </Typography>
+        </div>
+        <div className="flex">
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-normal text-Gray1 text-[16px]"
+          >
+            {userObject.unitKerja}
+          </Typography>
+        </div>
+
+        <div className="flex">
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-bold text-Gray1 text-[16px] w-[193px]"
+          >
+            Level ID
+          </Typography>
+
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-bold text-Gray1 text-[16px] pr-[24px]"
+          >
+            :
+          </Typography>
+
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-normal text-Gray1 text-[16px]"
+          >
+            {userObject.levelId}
+          </Typography>
+        </div>
+
+        <div className="flex">
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-bold text-Gray1 text-[16px] w-[193px]"
+          >
+            Role Pengguna
+          </Typography>
+
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-bold text-Gray1 text-[16px] pr-[24px]"
+          >
+            :
+          </Typography>
+
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-normal text-Gray1 text-[16px]"
+          >
+            {userObject.rolePengguna}
+          </Typography>
+        </div>
+
+        <div className="flex">
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-bold text-Gray1 text-[16px] w-[193px]"
+          >
+            Email
+          </Typography>
+
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-bold text-Gray1 text-[16px] pr-[24px]"
+          >
+            :
+          </Typography>
+
+          <Typography
+            color="blue-gray"
+            className="font-nunito font-normal text-Gray1 text-[16px]"
+          >
+            {userObject.email}
+          </Typography>
+        </div>
+
         <div className="flex">
           <Typography
             color="blue-gray"
@@ -321,7 +409,6 @@ const BerandaPage = ({ currentPage }) => {
             {userObject.nomorHandphone}
           </Typography>
         </div>
-        );
       </Card>
     </div>
   );
