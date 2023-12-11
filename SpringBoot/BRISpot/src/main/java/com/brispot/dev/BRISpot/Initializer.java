@@ -28,8 +28,8 @@ class Initializer implements CommandLineRunner {
 
     @Override
     public void run(String... strings) {
-        Stream.of("A", "B", "C", "D").forEach(kodePerusahaan ->
-            pipelineRepository.save(new Pipeline(kodePerusahaan))
+        Stream.of(1L, 2L, 3L, 4L).forEach(id ->
+            pipelineRepository.save(new Pipeline(id))
         );
 
         User user = new User("Ridwan Efendy", "90168000", "No 1112123", "Laki-laki", "E23", "Intern", "Kantor Pusat", "CMG", "WCWB", "Level 1", "RM", "dyywan@gmail.com", "081234712877");

@@ -8,9 +8,10 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 
+import axios from 'axios';
 import { FileInput } from "flowbite-react";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import iconForm from "../assets/icon-form.svg";
 import { useCountries } from "use-react-countries";
 
@@ -19,13 +20,34 @@ const NewPipeline = () => {
   const [files, setFiles] = useState([]);
   const [uploadedFiles, setUploadedFiles] = useState([]);
 
+  const initialPipelineState = {
+    kodePerusahaan: '',
+    namaPerusahaan: '',
+    grupUsaha: '',
+    kategoriBank: '',
+    negaraAsal: '',
+    jenisBank: '',
+    alamatPerusahaan: '',
+    deskripsiPerusahaan: '',
+    logoPerusahaan: null,
+    fasilitasPinjaman: '',
+    currency: '',
+    plafond: '',
+    eksposure: '',
+  };
+
+  const [pipeline, setPipeline] = useState(initialPipelineState);
+  const navigate = useNavigate();
+  const { kodePerusahaan } = useParams();
+
+
   function handleMultipleChange(event) {
     setFiles([...event.target.files]);
   }
 
   function handleMultipleSubmit(event) {
     event.preventDefault();
-    const url = "http://localhost:3000/uploadFiles";
+    const url = "http://localhost:5173/uploadFiles";
     const formData = new FormData();
     files.forEach((file, index) => {
       formData.append(`file${index}`, file);
@@ -36,6 +58,8 @@ const NewPipeline = () => {
         "content-type": "multipart/form-data",
       },
     };
+
+
 
     axios
       .post(url, formData, config)

@@ -31,9 +31,9 @@ public class PipelineController {
         return pipelineRepository.findAll();
     }
 
-    @GetMapping("/pipeline/{kodePerusahaan}")
-    public ResponseEntity<?> getPipeline(@PathVariable String kodePerusahaan) {
-        Optional<Pipeline> pipeline = pipelineRepository.findByKodePerusahaan(kodePerusahaan);
+    @GetMapping("/pipeline/{id}")
+    public ResponseEntity<?> getPipeline(@PathVariable Long id) {
+        Optional<Pipeline> pipeline = pipelineRepository.findById(id);
         
         return pipeline
             .map(response -> ResponseEntity.ok().body(response))
@@ -44,21 +44,21 @@ public class PipelineController {
     ResponseEntity<Pipeline> createPipeline(@Valid @RequestBody Pipeline pipeline) throws URISyntaxException {
         log.info("Request to create pipeline: {}", pipeline);
         Pipeline result = pipelineRepository.save(pipeline);
-        return ResponseEntity.created(new URI("/api/pipeline" + result.getKodePerusahaan()))
+        return ResponseEntity.created(new URI("/api/pipeline" + result.getId()))
             .body(result);
     }
 
-    @PutMapping("/pipeline/{kodePerusahaan}")
+    @PutMapping("/pipeline/{id}")
     ResponseEntity<Pipeline> updatePipeline(@Valid @RequestBody Pipeline pipeline) {
         log.info("Request to update pipeline: {}", pipeline);
         Pipeline result = pipelineRepository.save(pipeline);
         return ResponseEntity.ok().body(result);
     }
 
-    @DeleteMapping("/pipeline/{kodePerusahaan}")
-    public ResponseEntity<?> deletePipeline(@PathVariable String kodePerusahaan) {
-        log.info("Request to delete pipeline: {}", kodePerusahaan);
-        pipelineRepository.deleteByKodePerusahaan(kodePerusahaan);
+    @DeleteMapping("/pipeline/{id}")
+    public ResponseEntity<?> deletePipeline(@PathVariable Long id) {
+        log.info("Request to delete pipeline: {}", id);
+        pipelineRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
 

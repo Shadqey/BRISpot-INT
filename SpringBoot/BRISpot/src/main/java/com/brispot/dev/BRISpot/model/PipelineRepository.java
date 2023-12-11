@@ -5,11 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 // import java.util.List;
 import java.util.Optional;
 
-public interface PipelineRepository extends JpaRepository<Pipeline, String> {
+public interface PipelineRepository extends JpaRepository<Pipeline, Long> {
 
-    Optional<Pipeline> findByKodePerusahaan(String kodePerusahaan);
+    Optional<Pipeline> findById(Long id);
 
-    void deleteByKodePerusahaan(String kodePerusahaan);
+    void deleteById(Long id);
 
 
 }

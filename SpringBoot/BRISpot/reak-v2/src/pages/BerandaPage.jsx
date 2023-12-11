@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NavigationComponents from "../components/NavigationComponents";
 import { Typography } from "@material-tailwind/react";
-import { dataProfile } from "../data/index.js";
 import { Card } from "flowbite-react";
 
 const BerandaPage = ({ currentPage }) => {
