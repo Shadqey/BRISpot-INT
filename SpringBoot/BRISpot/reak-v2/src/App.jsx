@@ -24,7 +24,7 @@ function App() {
           <Route path="/" Component={BerandaPage}></Route>
           <Route path="/kunjungannasabah" Component={KunjunganNasabah}></Route>
           <Route path="/pipeline" Component={PipelinePage}></Route>
-          <Route path="/newpipeline" Component={NewPipeline}></Route>
+          <Route path="/pipeline/newpipeline" Component={NewPipeline}></Route>
           <Route path="/uploaddokumen" Component={UploadDokumen}></Route>
           <Route path="/riwayatkunjungan" Component={RiwayatKunjungan}></Route>
           <Route path="/kunjunganaktif" Component={KunjunganAktif}></Route>

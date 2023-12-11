@@ -64,7 +64,7 @@ const TestSidebar = ({ children }) => {
   const pageItem = [
     {
       id: 1,
-      path: "/newpipeline",
+      path: "/pipeline/newpipeline",
       name: "New Pipeline",
       iconL: <HomeIcon />,
     },

@@ -9,7 +9,6 @@ import jakarta.persistence.*;
 
 @Data
 @NoArgsConstructor
-@RequiredArgsConstructor
 @Entity
 @Table(name = "pipelines")
 public class Pipeline {

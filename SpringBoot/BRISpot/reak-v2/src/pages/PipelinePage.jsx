@@ -17,7 +17,7 @@ const PipelinePage = () => {
       </Typography>
 
       <div className="flex flex-col items-center mb-[100px] mt-[50px]">
-        <Link to="/newpipeline">
+        <Link to="/pipeline/newpipeline">
           <Button className="bg-BgPrimary w-96 py-4 text-white font-bold rounded-lg">
             Tambahkan Pipeline
           </Button>

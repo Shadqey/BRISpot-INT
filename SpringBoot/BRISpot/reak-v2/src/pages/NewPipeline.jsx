@@ -37,9 +37,20 @@ const NewPipeline = () => {
   };
 
   const [pipeline, setPipeline] = useState(initialPipelineState);
-  const navigate = useNavigate();
-  const { kodePerusahaan } = useParams();
+  // const navigate = useNavigate();
+  // const { id } = useParams();
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    // Add Pipeline Method
+    try {
+      const response = await axios.post("http://localhost:8080/pipeline", pipeline);
+      console.log("Pipeline added:", response.data);
+    } catch (error) {
+      console.error("Pipeline NOT added:", error);
+    }
+  }
 
   function handleMultipleChange(event) {
     setFiles([...event.target.files]);

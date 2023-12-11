@@ -5,7 +5,7 @@ import { Card } from "flowbite-react";
 
 const BerandaPage = ({ currentPage }) => {
   const [userObject, setUserObject] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false); 
 
   useEffect(() => {
     setLoading(true);
