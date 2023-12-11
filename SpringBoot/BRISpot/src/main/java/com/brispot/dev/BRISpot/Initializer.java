@@ -28,15 +28,19 @@ class Initializer implements CommandLineRunner {
 
     @Override
     public void run(String... strings) {
-        Stream.of(1L, 2L, 3L, 4L).forEach(id ->
-            pipelineRepository.save(new Pipeline(id))
-        );
+        // Stream.of(1L, 2L, 3L, 4L).forEach(id ->
+        //     pipelineRepository.save(new Pipeline())
+        // );
+
+        for (int i = 0; i <= 3; i++) {
+            pipelineRepository.save(new Pipeline());
+        }
 
         User user = new User("Ridwan Efendy", "90168000", "No 1112123", "Laki-laki", "E23", "Intern", "Kantor Pusat", "CMG", "WCWB", "Level 1", "RM", "dyywan@gmail.com", "081234712877");
 
         userRepository.save(user);
 
-        Optional<Pipeline> a = pipelineRepository.findByKodePerusahaan("A");
+        Optional<Pipeline> a = pipelineRepository.findById(1L);
         Pipeline finalA;
 
         if (a.isPresent()) {
